@@ -553,3 +553,19 @@ html[data-theme="dark"] .theme-toggle {
     height: 42px;
   }
 }
+
+
+/* ===== DARK MODE: PLATFORM ICONS WITHOUT WHITE TILE ===== */
+html[data-theme="dark"] .brand-icon,
+html[data-theme="dark"] .facebook .brand-icon,
+html[data-theme="dark"] .shopee .brand-icon,
+html[data-theme="dark"] .tiktok .brand-icon,
+html[data-theme="dark"] .tiki .brand-icon,
+html[data-theme="dark"] .lazada .brand-icon,
+html[data-theme="dark"] .zalo .brand-icon,
+html[data-theme="dark"] .instagram .brand-icon,
+html[data-theme="dark"] .youtube .brand-icon {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}

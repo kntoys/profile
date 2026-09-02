@@ -238,6 +238,7 @@ footer small { margin-top:7px; opacity:.75; }
 .hero .intro a {
   color: #fff;
 }
+
 .title-sub {
   font-size: 0.72em;
   white-space: nowrap;
@@ -247,4 +248,30 @@ footer small { margin-top:7px; opacity:.75; }
   .title-sub {
     font-size: 0.62em;
   }
+}
+
+/* KN TOYS */
+.hero h1 {
+  color: #243F96;
+}
+
+/* Đồ chơi & Sách thiếu nhi */
+.title-sub {
+  color: #243F96;
+}
+
+/* Phần giới thiệu */
+.intro {
+  color: #FFF8F5;
+}
+
+/* Dòng English */
+.intro span {
+  color: #FFF8F5;
+}
+
+/* Tel / Zalo */
+.intro a {
+  color: #FFD166;
+  font-weight: 800;
 }

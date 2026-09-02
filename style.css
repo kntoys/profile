@@ -378,3 +378,55 @@ footer small {
     height: 23px;
   }
 }
+
+/* ===== WHITE STANDALONE HERO CONTACT ICONS ===== */
+.hero-contact-actions {
+  margin-top: 14px;
+  gap: 24px;
+}
+
+.contact-action,
+.contact-action:link,
+.contact-action:visited {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #fff;
+}
+
+.contact-action:hover {
+  background: transparent;
+  box-shadow: none;
+  color: #fff;
+  transform: translateY(-2px) scale(1.06);
+}
+
+.contact-action:active {
+  transform: scale(.96);
+}
+
+.contact-action svg {
+  width: 29px;
+  height: 29px;
+  fill: currentColor;
+}
+
+@media (max-width: 480px) {
+  .hero-contact-actions {
+    gap: 22px;
+  }
+
+  .contact-action {
+    width: 30px;
+    height: 30px;
+  }
+
+  .contact-action svg {
+    width: 27px;
+    height: 27px;
+  }
+}

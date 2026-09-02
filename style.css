@@ -238,3 +238,13 @@ footer small { margin-top:7px; opacity:.75; }
 .hero .intro a {
   color: #fff;
 }
+.title-sub {
+  font-size: 0.65em;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .title-sub {
+    font-size: 0.55em;
+  }
+}

@@ -231,24 +231,7 @@ footer small { margin-top:7px; opacity:.75; }
   padding: 7px 3px;
 }
 
-
-/* Only change the requested introduction text to white */
-.hero .intro,
-.hero .intro span,
-.hero .intro a {
-  color: #fff;
-}
-
-.title-sub {
-  font-size: 0.72em;
-  white-space: nowrap;
-}
-
-@media (max-width: 480px) {
-  .title-sub {
-    font-size: 0.62em;
-  }
-}
+/* ===== KN TOYS HERO TEXT ===== */
 
 /* KN TOYS */
 .hero h1 {
@@ -256,22 +239,35 @@ footer small { margin-top:7px; opacity:.75; }
 }
 
 /* Đồ chơi & Sách thiếu nhi */
-.title-sub {
+.hero h1 .title-sub {
+  display: inline-block;
   color: #243F96;
+  font-size: 0.72em;
+  line-height: 1.15;
+  white-space: nowrap;
 }
 
-/* Phần giới thiệu */
-.intro {
+/* Giới thiệu tiếng Việt */
+.hero .intro {
   color: #FFF8F5;
 }
 
-/* Dòng English */
-.intro span {
+/* Giới thiệu tiếng Anh */
+.hero .intro span {
   color: #FFF8F5;
 }
 
 /* Tel / Zalo */
-.intro a {
+.hero .intro a,
+.hero .intro a:link,
+.hero .intro a:visited {
   color: #FFD166;
-  font-weight: 800;
+  font-weight: 900;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .hero h1 .title-sub {
+    font-size: 0.62em;
+  }
 }

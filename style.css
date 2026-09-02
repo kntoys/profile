@@ -239,12 +239,12 @@ footer small { margin-top:7px; opacity:.75; }
   color: #fff;
 }
 .title-sub {
-  font-size: 0.65em;
+  font-size: 0.72em;
   white-space: nowrap;
 }
 
 @media (max-width: 480px) {
   .title-sub {
-    font-size: 0.55em;
+    font-size: 0.62em;
   }
 }

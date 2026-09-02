@@ -319,3 +319,62 @@ footer small {
   .footer-brand strong { font-size: .90rem; }
   footer small { font-size: .62rem; }
 }
+
+
+/* ===== HERO QUICK CONTACT ICONS ===== */
+.hero-contact-actions {
+  margin: 14px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.contact-action {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  color: #243F96;
+  background: rgba(255,255,255,.94);
+  border: 1px solid rgba(36,63,150,.12);
+  box-shadow: 0 8px 18px rgba(36,63,150,.10);
+  text-decoration: none;
+  transition: transform .16s ease, box-shadow .16s ease, background .16s ease;
+}
+
+.contact-action:hover {
+  transform: translateY(-2px);
+  background: #fff;
+  box-shadow: 0 12px 22px rgba(36,63,150,.16);
+}
+
+.contact-action:active {
+  transform: translateY(0);
+}
+
+.contact-action svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+  display: block;
+}
+
+@media (max-width: 480px) {
+  .hero-contact-actions {
+    margin-top: 12px;
+    gap: 12px;
+  }
+
+  .contact-action {
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
+  }
+
+  .contact-action svg {
+    width: 23px;
+    height: 23px;
+  }
+}

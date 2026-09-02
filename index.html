@@ -7,7 +7,20 @@
   <title>KN TOYS - Đồ chơi &amp; Sách thiếu nhi</title>
 
   <meta name="description" content="KN TOYS cung cấp đồ chơi trẻ em và sách thiếu nhi chính hãng. Official authorized children's books and toys store.">
-  <meta name="theme-color" content="#ef3340">
+  <meta name="theme-color" content="#ef3340" id="theme-color-meta">
+
+  <script>
+    (function(){
+      try {
+        const saved = localStorage.getItem("kntoys-theme");
+        const systemDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.setAttribute("data-theme", saved || (systemDark ? "dark" : "light"));
+      } catch(e) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    })();
+  </script>
+
 
   <link rel="canonical" href="https://kntoys.vn/">
   <link rel="icon" href="logo.png" type="image/png">
@@ -29,9 +42,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=13">
+  <link rel="stylesheet" href="style.css?v=14">
 </head>
 <body>
+
+  <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Chuyển chế độ sáng/tối" title="Chuyển chế độ sáng/tối">
+    <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"></circle>
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path>
+    </svg>
+    <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path>
+    </svg>
+  </button>
+
   <main class="page">
     <section class="hero">
       <div class="logo-wrap"><img src="logo.png" alt="KN TOYS"></div>
@@ -134,6 +158,29 @@
       <small>© <span id="year"></span> KN TOYS · kntoys.vn</small>
     </footer>
   </main>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const themeToggle = document.getElementById("theme-toggle");
+    const themeColorMeta = document.getElementById("theme-color-meta");
+
+    function applyTheme(theme, save) {
+      document.documentElement.setAttribute("data-theme", theme);
+      themeToggle.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
+      themeToggle.setAttribute("title", theme === "dark" ? "Chế độ sáng" : "Chế độ tối");
+      themeToggle.setAttribute("aria-label", theme === "dark" ? "Chuyển sang chế độ sáng" : "Chuyển sang chế độ tối");
+      if (themeColorMeta) themeColorMeta.setAttribute("content", theme === "dark" ? "#111317" : "#ef3340");
+      if (save) {
+        try { localStorage.setItem("kntoys-theme", theme); } catch(e) {}
+      }
+    }
+
+    applyTheme(document.documentElement.getAttribute("data-theme") || "light", false);
+
+    themeToggle.addEventListener("click", function() {
+      const current = document.documentElement.getAttribute("data-theme") || "light";
+      applyTheme(current === "dark" ? "light" : "dark", true);
+    });
+  </script>
 </body>
 </html>

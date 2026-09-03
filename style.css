@@ -772,49 +772,54 @@ html[data-theme="dark"] .policy-note {
 }
 
 
-/* ===== FLOATING HOME BUTTON ON POLICY PAGES ===== */
+
+
+
+
+/* ===== ICON-ONLY FLOATING HOME BUTTON ===== */
+.policy-page {
+  padding-top: 82px;
+}
+
 .floating-home {
   position: fixed;
-  left: max(16px, env(safe-area-inset-left));
-  top: max(16px, env(safe-area-inset-top));
-  z-index: 1000;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 44px;
-  padding: 0 14px 0 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,.90);
+  top: 16px;
+  left: 16px;
+  z-index: 1100;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,.92);
   color: #243F96;
   border: 1px solid rgba(36,63,150,.14);
   box-shadow: 0 8px 24px rgba(36,63,150,.14);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   text-decoration: none;
-  font-size: .86rem;
-  font-weight: 900;
   transition: transform .16s ease, box-shadow .16s ease, background .16s ease;
 }
 
 .floating-home:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   background: #fff;
   box-shadow: 0 12px 28px rgba(36,63,150,.18);
 }
 
 .floating-home:active {
-  transform: translateY(0) scale(.97);
+  transform: scale(.96);
 }
 
 .floating-home svg {
-  width: 21px;
-  height: 21px;
+  width: 22px;
+  height: 22px;
+  display: block;
   fill: currentColor;
-  flex: 0 0 auto;
 }
 
 html[data-theme="dark"] .floating-home {
-  background: rgba(31,34,41,.88);
+  background: rgba(31,34,41,.90);
   color: #FFD166;
   border-color: rgba(255,255,255,.12);
   box-shadow: 0 8px 24px rgba(0,0,0,.28);
@@ -822,21 +827,31 @@ html[data-theme="dark"] .floating-home {
 
 html[data-theme="dark"] .floating-home:hover {
   background: rgba(38,41,49,.96);
-  box-shadow: 0 12px 28px rgba(0,0,0,.34);
 }
 
+/* Smaller legal policy links on phones */
 @media (max-width: 520px) {
+  .policy-page {
+    padding-top: 72px;
+  }
+
   .floating-home {
-    left: max(12px, env(safe-area-inset-left));
-    top: max(12px, env(safe-area-inset-top));
-    min-height: 42px;
-    padding: 0 12px 0 10px;
-    gap: 6px;
-    font-size: .80rem;
+    top: 12px;
+    left: 12px;
+    width: 42px;
+    height: 42px;
   }
 
   .floating-home svg {
-    width: 20px;
-    height: 20px;
+    width: 21px;
+    height: 21px;
+  }
+
+  .legal-links {
+    margin-top: 3px;
+    gap: 3px 5px;
+    font-size: .70rem;
+    line-height: 1.35;
+    font-weight: 800;
   }
 }

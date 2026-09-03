@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ef3340" id="theme-color-meta">
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=16">
+  <script>
+    (function(){
+      try {
+        const saved = localStorage.getItem("kntoys-theme");
+        const systemDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.setAttribute("data-theme", saved || (systemDark ? "dark" : "light"));
+      } catch(e) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    })();
+  </script>
+
+  <title>Chính sách bảo mật - KN TOYS</title>
+  <meta name="description" content="Chính sách bảo mật thông tin của KN TOYS.">
+  <link rel="canonical" href="https://kntoys.vn/chinh-sach-bao-mat.html">
+</head>
+<body>
+
+  <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Chuyển chế độ sáng/tối" title="Chuyển chế độ sáng/tối">
+    <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"></circle>
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path>
+    </svg>
+    <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path>
+    </svg>
+  </button>
+
+  <main class="policy-page">
+    <a class="policy-back" href="/">← Về trang chủ KN TOYS</a>
+    <section class="policy-card">
+      <h1>Chính sách bảo mật</h1>
+      <p>KN TOYS tôn trọng và bảo vệ thông tin cá nhân của khách hàng và người truy cập website.</p>
+
+      <h2>1. Phạm vi thu thập thông tin</h2>
+      <p>Website kntoys.vn hiện chủ yếu cung cấp thông tin giới thiệu, thông tin liên hệ và liên kết đến các kênh bán hàng chính thức của KN TOYS. Website không yêu cầu người dùng tạo tài khoản và không trực tiếp thu thập thông tin thanh toán.</p>
+
+      <h2>2. Thông tin người dùng chủ động cung cấp</h2>
+      <p>Khi người dùng chủ động liên hệ với KN TOYS qua điện thoại, email, Zalo hoặc các nền tảng liên kết, thông tin được cung cấp sẽ được sử dụng để phản hồi yêu cầu, hỗ trợ khách hàng và giải quyết các vấn đề liên quan.</p>
+
+      <h2>3. Giao dịch trên nền tảng bên thứ ba</h2>
+      <p>Việc đặt hàng, thanh toán và cung cấp dữ liệu cá nhân trên Shopee, TikTok Shop, Tiki, Lazada hoặc các nền tảng khác được thực hiện theo chính sách bảo mật và điều khoản của chính nền tảng đó.</p>
+
+      <h2>4. Bảo mật thông tin</h2>
+      <p>KN TOYS không bán hoặc trao đổi trái phép thông tin cá nhân của khách hàng cho bên thứ ba. Thông tin chỉ được sử dụng trong phạm vi cần thiết để phục vụ yêu cầu của khách hàng hoặc theo yêu cầu của pháp luật.</p>
+
+      <h2>5. Liên hệ về dữ liệu cá nhân</h2>
+      <p>Mọi yêu cầu liên quan đến thông tin cá nhân có thể gửi đến <a href="mailto:lienhe@kntoys.vn">lienhe@kntoys.vn</a> hoặc gọi <a href="tel:0562136879">056.213.6879</a>.</p>
+
+      <p class="policy-note">Chủ sở hữu website: HỘ KINH DOANH ĐỒ CHƠI VÀ SÁCH THIẾU NHI KNTOYS · MST: 079000000000.</p>
+    </section>
+  </main>
+
+  <script>
+    const themeToggle = document.getElementById("theme-toggle");
+    const themeColorMeta = document.getElementById("theme-color-meta");
+
+    function applyTheme(theme, save) {
+      document.documentElement.setAttribute("data-theme", theme);
+      themeToggle.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
+      themeToggle.setAttribute("title", theme === "dark" ? "Chế độ sáng" : "Chế độ tối");
+      themeToggle.setAttribute("aria-label", theme === "dark" ? "Chuyển sang chế độ sáng" : "Chuyển sang chế độ tối");
+      if (themeColorMeta) themeColorMeta.setAttribute("content", theme === "dark" ? "#111317" : "#ef3340");
+      if (save) {
+        try { localStorage.setItem("kntoys-theme", theme); } catch(e) {}
+      }
+    }
+
+    applyTheme(document.documentElement.getAttribute("data-theme") || "light", false);
+    themeToggle.addEventListener("click", function() {
+      const current = document.documentElement.getAttribute("data-theme") || "light";
+      applyTheme(current === "dark" ? "light" : "dark", true);
+    });
+  </script>
+</body>
+</html>

@@ -424,11 +424,13 @@
     }
 
     .social-links a {
-      width: 46px;
-      height: 46px;
+      width: 38px;
+      height: 38px;
       display: grid;
       place-items: center;
       border-radius: 50%;
+      overflow: hidden;
+      background: #fff;
       text-decoration: none;
       transition: transform .16s ease, box-shadow .16s ease;
     }
@@ -439,9 +441,10 @@
     }
 
     .social-links img {
-      width: 46px;
-      height: 46px;
-      object-fit: contain;
+      width: 38px;
+      height: 38px;
+      object-fit: cover;
+      border-radius: 50%;
       display: block;
     }
 
@@ -451,13 +454,13 @@
       }
 
       .social-links {
-        gap: 11px;
+        gap: 10px;
       }
 
       .social-links a,
       .social-links img {
-        width: 42px;
-        height: 42px;
+        width: 34px;
+        height: 34px;
       }
     }
 

@@ -4,138 +4,573 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Khuyến mãi - KN TOYS</title>
-  <meta name="description" content="Trang khuyến mãi KN TOYS.">
+  <meta name="description" content="Mã ưu đãi dành cho khách hàng KN TOYS trên Shopee Mall, TikTok Mall, Tiki và Lazada Mall.">
   <meta name="theme-color" content="#ef3340">
+  <link rel="canonical" href="https://kntoys.vn/khuyenmai/">
   <link rel="icon" href="../logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --red: #ef3340;
+      --red-dark: #d9202d;
+      --blue: #243f96;
+      --ink: #252932;
+      --muted: #6d7380;
+      --cream: #fff8f5;
+      --white: #ffffff;
+      --line: rgba(239, 51, 64, .15);
+      --shadow: 0 18px 45px rgba(116, 26, 37, .12);
+    }
+
     * { box-sizing: border-box; }
 
-    html, body {
-      margin: 0;
-      width: 100%;
-      height: 100%;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #fff;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
+      margin: 0;
+      font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 8%, rgba(255,255,255,.85), transparent 28%),
+        linear-gradient(180deg, #fff 0 250px, #fff6f4 480px, #ef3340 100%);
+      min-height: 100vh;
     }
 
+    a { color: inherit; }
+
     .topbar {
-      height: 58px;
-      flex: 0 0 58px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      height: 66px;
+      padding: 0 18px;
+      background: rgba(239,51,64,.97);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 4px 18px rgba(67, 18, 24, .16);
       display: flex;
       align-items: center;
       gap: 12px;
-      padding: 0 16px;
-      background: #ef3340;
-      box-shadow: 0 2px 10px rgba(0,0,0,.12);
-      position: relative;
-      z-index: 10;
     }
 
-    .brand {
+    .topbar-brand {
       display: flex;
       align-items: center;
       gap: 10px;
       min-width: 0;
       color: #fff;
-      font-weight: 800;
-      font-size: 16px;
-      white-space: nowrap;
+      font-size: 1.04rem;
+      font-weight: 900;
+      letter-spacing: -.01em;
     }
 
-    .brand img {
-      width: 34px;
-      height: 34px;
+    .topbar-brand img {
+      width: 40px;
+      height: 40px;
       object-fit: contain;
       display: block;
     }
 
-    .home-button {
+    .home-btn {
       margin-left: auto;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 7px;
-      padding: 9px 13px;
-      border-radius: 10px;
+      min-height: 40px;
+      padding: 0 15px;
+      border-radius: 12px;
       background: #fff;
-      color: #ef3340;
+      color: var(--red);
       text-decoration: none;
-      font-weight: 800;
-      font-size: 14px;
-      line-height: 1;
-      box-shadow: 0 2px 8px rgba(0,0,0,.10);
+      font-weight: 900;
+      white-space: nowrap;
+      box-shadow: 0 6px 16px rgba(82, 17, 26, .12);
     }
 
-    .home-button:hover {
-      transform: translateY(-1px);
+    .home-btn:hover { transform: translateY(-1px); }
+
+    .page {
+      width: min(100% - 28px, 760px);
+      margin: 0 auto;
+      padding: 34px 0 46px;
     }
 
-    .frame-wrap {
-      flex: 1 1 auto;
-      min-height: 0;
-      width: 100%;
-      background: #fff;
+    .hero {
+      text-align: center;
+      padding: 12px 12px 26px;
     }
 
-    iframe {
+    .hero-logo {
+      width: min(72%, 300px);
+      margin: 0 auto 18px;
+    }
+
+    .hero-logo img {
       display: block;
       width: 100%;
-      height: 100%;
-      border: 0;
-      background: #fff;
+      height: auto;
+      filter: drop-shadow(0 8px 18px rgba(0,0,0,.08));
     }
 
-    @media (max-width: 520px) {
+    .hero h1 {
+      margin: 0;
+      color: var(--blue);
+      font-size: clamp(2rem, 7vw, 3.25rem);
+      line-height: 1.05;
+      font-weight: 900;
+      letter-spacing: -.04em;
+    }
+
+    .hero .kicker {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: var(--red-dark);
+      background: rgba(239,51,64,.09);
+      font-weight: 900;
+      font-size: .86rem;
+      letter-spacing: .04em;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 18px auto 0;
+      color: #4f5560;
+      font-size: 1.02rem;
+      line-height: 1.65;
+      font-weight: 650;
+    }
+
+    .highlight {
+      color: var(--red-dark);
+      font-weight: 900;
+    }
+
+    .panel {
+      background: rgba(255,255,255,.96);
+      border: 1px solid rgba(255,255,255,.75);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 24px;
+      margin-top: 18px;
+    }
+
+    .panel-title {
+      margin: 0 0 6px;
+      font-size: 1.42rem;
+      line-height: 1.2;
+      color: var(--ink);
+      font-weight: 900;
+    }
+
+    .panel-sub {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.55;
+      font-weight: 650;
+    }
+
+    .coupon-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .coupon {
+      display: grid;
+      grid-template-columns: 54px minmax(0,1fr) auto;
+      gap: 13px;
+      align-items: center;
+      padding: 12px;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid #edf0f3;
+      box-shadow: 0 8px 20px rgba(30,35,45,.06);
+    }
+
+    .platform-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 15px;
+      object-fit: contain;
+      background: #fff;
+      padding: 4px;
+    }
+
+    .coupon-main { min-width: 0; }
+
+    .coupon-main strong {
+      display: block;
+      font-size: 1rem;
+      font-weight: 900;
+      margin-bottom: 2px;
+    }
+
+    .code {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--red-dark);
+      font-size: .96rem;
+      font-weight: 900;
+      word-break: break-word;
+    }
+
+    .copy-btn, .open-btn {
+      border: 0;
+      min-height: 38px;
+      padding: 0 12px;
+      border-radius: 11px;
+      cursor: pointer;
+      font: inherit;
+      font-size: .82rem;
+      font-weight: 900;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .copy-btn {
+      background: #fff0f1;
+      color: var(--red-dark);
+    }
+
+    .open-btn {
+      background: var(--red);
+      color: #fff;
+      white-space: nowrap;
+    }
+
+    .benefits {
+      display: grid;
+      gap: 11px;
+      margin-top: 14px;
+    }
+
+    .benefit {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: #505661;
+      line-height: 1.52;
+      font-weight: 700;
+    }
+
+    .check {
+      flex: 0 0 25px;
+      width: 25px;
+      height: 25px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(239,51,64,.10);
+      color: var(--red);
+      font-weight: 900;
+      margin-top: 1px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .contact-card {
+      padding: 13px 14px;
+      border-radius: 16px;
+      background: #fff7f6;
+      border: 1px solid var(--line);
+      text-decoration: none;
+      color: var(--ink);
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    .contact-card span {
+      display: block;
+      color: var(--muted);
+      font-size: .75rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    .thanks {
+      text-align: center;
+      color: #fff;
+      padding: 28px 12px 8px;
+      font-weight: 850;
+      text-shadow: 0 1px 2px rgba(0,0,0,.08);
+    }
+
+    .thanks strong {
+      display: block;
+      font-size: 1.15rem;
+      margin-bottom: 5px;
+    }
+
+    .footer-note {
+      opacity: .84;
+      font-size: .82rem;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 22px;
+      transform: translate(-50%, 18px);
+      padding: 10px 15px;
+      border-radius: 12px;
+      background: #20242b;
+      color: #fff;
+      font-weight: 800;
+      font-size: .87rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: .2s ease;
+      z-index: 100;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    @media (max-width: 600px) {
       .topbar {
-        height: 54px;
-        flex-basis: 54px;
+        height: 58px;
         padding: 0 10px;
       }
 
-      .brand {
-        font-size: 14px;
-        gap: 8px;
+      .topbar-brand {
+        font-size: .92rem;
+        gap: 7px;
       }
 
-      .brand img {
-        width: 30px;
-        height: 30px;
+      .topbar-brand img {
+        width: 34px;
+        height: 34px;
       }
 
-      .home-button {
-        padding: 8px 10px;
-        font-size: 13px;
+      .home-btn {
+        min-height: 36px;
+        padding: 0 11px;
+        font-size: .80rem;
       }
+
+      .page {
+        width: min(100% - 18px, 760px);
+        padding-top: 24px;
+      }
+
+      .panel {
+        padding: 17px;
+        border-radius: 22px;
+      }
+
+      .coupon {
+        grid-template-columns: 48px minmax(0,1fr);
+      }
+
+      .platform-icon {
+        width: 48px;
+        height: 48px;
+      }
+
+      .coupon > :last-child {
+        grid-column: 1 / -1;
+      }
+
+      .copy-btn, .open-btn {
+        width: 100%;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero p { font-size: .95rem; }
     }
   </style>
 </head>
 
 <body>
+
   <header class="topbar">
-    <div class="brand">
+    <div class="topbar-brand">
       <img src="../logo-white.png" alt="KN TOYS">
       <span>KN TOYS · Khuyến mãi</span>
     </div>
 
-    <a class="home-button" href="https://kntoys.vn/">
+    <a class="home-btn" href="https://kntoys.vn/" aria-label="Về trang chủ KN TOYS">
       ← Về trang chủ
     </a>
   </header>
 
-  <main class="frame-wrap">
-    <iframe
-      src="https://sites.google.com/view/kntoys/trang-ch%E1%BB%A7"
-      title="Khuyến mãi KN TOYS"
-      loading="eager"
-      allowfullscreen>
-    </iframe>
+  <main class="page">
+
+    <section class="hero">
+      <div class="hero-logo">
+        <img src="../logo.png" alt="KN TOYS - Đồ chơi & Sách thiếu nhi">
+      </div>
+
+      <h1>Cảm ơn bạn!</h1>
+      <span class="kicker">ƯU ĐÃI DÀNH CHO KHÁCH HÀNG KN TOYS</span>
+
+      <p>
+        Cám ơn bạn đã lựa chọn và đồng hành cùng KN TOYS.
+        Tặng bạn <span class="highlight">mã giảm giá 10K</span> cho lần mua tiếp theo
+        <span class="highlight">(đơn từ 200K)</span>. Vui lòng chọn mã phù hợp với kênh mua hàng bên dưới.
+      </p>
+    </section>
+
+    <section class="panel">
+      <h2 class="panel-title">Mã giảm giá của bạn</h2>
+      <p class="panel-sub">Bấm “Sao chép mã” để lưu nhanh. Riêng Lazada, bấm nút để mở trang lưu voucher.</p>
+
+      <div class="coupon-list">
+
+        <article class="coupon">
+          <img class="platform-icon" src="../icon-shopee.png" alt="Shopee Mall">
+          <div class="coupon-main">
+            <strong>Shopee Mall</strong>
+            <span class="code">KNTOTHANK</span>
+          </div>
+          <button class="copy-btn" type="button" data-code="KNTOTHANK">Sao chép mã</button>
+        </article>
+
+        <article class="coupon">
+          <img class="platform-icon" src="../icon-tiktok.webp" alt="TikTok Mall">
+          <div class="coupon-main">
+            <strong>TikTok Mall</strong>
+            <span class="code">KNTOTHANK</span>
+          </div>
+          <button class="copy-btn" type="button" data-code="KNTOTHANK">Sao chép mã</button>
+        </article>
+
+        <article class="coupon">
+          <img class="platform-icon" src="../icon-tiki.png" alt="Tiki">
+          <div class="coupon-main">
+            <strong>Tiki</strong>
+            <span class="code">KNTOTHANKS</span>
+          </div>
+          <button class="copy-btn" type="button" data-code="KNTOTHANKS">Sao chép mã</button>
+        </article>
+
+        <article class="coupon">
+          <img class="platform-icon" src="../icon-lazada.png" alt="Lazada Mall">
+          <div class="coupon-main">
+            <strong>Lazada Mall</strong>
+            <span class="code">Lưu voucher trên Lazada</span>
+          </div>
+          <a class="open-btn"
+             href="https://pages.lazada.vn/wow/gcp/vn/store_lp/voucher?domain=SHOP&amp;scene=store&amp;sellerId=v15o944o04k&amp;voucherId=vy49r1b584x4mo"
+             target="_blank" rel="noopener noreferrer">Lưu voucher ↗</a>
+        </article>
+
+        <article class="coupon">
+          <img class="platform-icon" src="../icon-shopee.png" alt="Shopee">
+          <div class="coupon-main">
+            <strong>Shopee · Đồ chơi giáo dục</strong>
+            <span class="code">KNTOCAMON</span>
+          </div>
+          <button class="copy-btn" type="button" data-code="KNTOCAMON">Sao chép mã</button>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2 class="panel-title">Mua sắm an tâm cùng KN TOYS</h2>
+      <p class="panel-sub">
+        KN TOYS cung cấp đồ chơi trẻ em và sách thiếu nhi chính hãng, nguồn gốc xuất xứ và chứng từ rõ ràng.
+      </p>
+
+      <div class="benefits">
+        <div class="benefit"><span class="check">✓</span><span>Sản phẩm chính hãng, đúng mô tả và đúng hình ảnh.</span></div>
+        <div class="benefit"><span class="check">✓</span><span>Bảo hành chính hãng theo chính sách áp dụng của sản phẩm.</span></div>
+        <div class="benefit"><span class="check">✓</span><span>Hỗ trợ giao nhanh Hỏa Tốc tại TP. Hồ Chí Minh.</span></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2 class="panel-title">Liên hệ KN TOYS</h2>
+      <p class="panel-sub">Mọi thắc mắc, vui lòng liên hệ KN TOYS qua các kênh chính thức dưới đây.</p>
+
+      <div class="contact-grid">
+        <a class="contact-card" href="https://zalo.me/0562136879" target="_blank" rel="noopener noreferrer">
+          <span>Điện thoại / Zalo</span>
+          056.213.6879
+        </a>
+
+        <a class="contact-card" href="mailto:lienhe@kntoys.vn">
+          <span>Email</span>
+          lienhe@kntoys.vn
+        </a>
+
+        <a class="contact-card" href="https://www.facebook.com/kntoys" target="_blank" rel="noopener noreferrer">
+          <span>Facebook</span>
+          facebook.com/kntoys
+        </a>
+
+        <a class="contact-card"
+           href="https://www.google.com/maps/place/KN+TOYS+-+%C4%90%E1%BB%93+Ch%C6%A1i+%26+S%C3%A1ch+Thi%E1%BA%BFu+Nhi/@10.8001497,106.627266,17z/data=!3m1!4b1!4m6!3m5!1s0x317529b0570a3339:0x8c112cc8fc429189!8m2!3d10.8001497!4d106.6298409!16s%2Fg%2F11rf4hnpf6"
+           target="_blank" rel="noopener noreferrer">
+          <span>Địa chỉ / Google Maps</span>
+          90/4/6 Trần Văn Ơn, P. Tân Sơn Nhì, TP. Hồ Chí Minh
+        </a>
+      </div>
+    </section>
+
+    <footer class="thanks">
+      <strong>Xin cảm ơn quý khách!</strong>
+      <div class="footer-note">© <span id="year"></span> KN TOYS · kntoys.vn</div>
+    </footer>
+
   </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Đã sao chép mã</div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const toast = document.getElementById("toast");
+    let toastTimer;
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove("show"), 1800);
+    }
+
+    document.querySelectorAll("[data-code]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const code = button.getAttribute("data-code");
+
+        try {
+          await navigator.clipboard.writeText(code);
+          showToast("Đã sao chép mã: " + code);
+        } catch (e) {
+          const temp = document.createElement("textarea");
+          temp.value = code;
+          temp.style.position = "fixed";
+          temp.style.opacity = "0";
+          document.body.appendChild(temp);
+          temp.select();
+          document.execCommand("copy");
+          temp.remove();
+          showToast("Đã sao chép mã: " + code);
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>

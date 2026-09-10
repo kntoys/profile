@@ -397,6 +397,70 @@
 
       .hero p { font-size: .95rem; }
     }
+  
+    .social-panel {
+      margin-top: 18px;
+      padding: 20px 18px;
+      background: rgba(255,255,255,.96);
+      border: 1px solid rgba(255,255,255,.75);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .social-title {
+      margin: 0 0 14px;
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: var(--ink);
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .social-links a {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      text-decoration: none;
+      transition: transform .16s ease, box-shadow .16s ease;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 8px 18px rgba(0,0,0,.10);
+    }
+
+    .social-links img {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+      display: block;
+    }
+
+    @media (max-width: 520px) {
+      .social-panel {
+        padding: 17px 12px;
+      }
+
+      .social-links {
+        gap: 11px;
+      }
+
+      .social-links a,
+      .social-links img {
+        width: 42px;
+        height: 42px;
+      }
+    }
+
   </style>
 </head>
 
@@ -524,6 +588,34 @@
            target="_blank" rel="noopener noreferrer">
           <span>Địa chỉ / Google Maps</span>
           90/4/6 Trần Văn Ơn, P. Tân Sơn Nhì, TP. Hồ Chí Minh
+        </a>
+      </div>
+    </section>
+
+
+    <section class="social-panel" aria-label="Kênh chính thức của KN TOYS">
+      <h2 class="social-title">Kết nối với KN TOYS</h2>
+      <div class="social-links">
+        <a href="https://www.facebook.com/kntoys" target="_blank" rel="noopener noreferrer" aria-label="Facebook KN TOYS" title="Facebook">
+          <img src="../icon-facebook.webp" alt="Facebook">
+        </a>
+        <a href="https://www.tiktok.com/@kntoys.shop" target="_blank" rel="noopener noreferrer" aria-label="TikTok KN TOYS" title="TikTok">
+          <img src="../icon-tiktok.webp" alt="TikTok">
+        </a>
+        <a href="https://shopee.vn/kntoys.shop" target="_blank" rel="noopener noreferrer" aria-label="Shopee Mall KN TOYS" title="Shopee Mall">
+          <img src="../icon-shopee.png" alt="Shopee">
+        </a>
+        <a href="https://tiki.vn/cua-hang/kn-toys-shop" target="_blank" rel="noopener noreferrer" aria-label="Tiki KN TOYS" title="Tiki">
+          <img src="../icon-tiki.png" alt="Tiki">
+        </a>
+        <a href="https://lazada.vn/kntoys" target="_blank" rel="noopener noreferrer" aria-label="Lazada Mall KN TOYS" title="Lazada Mall">
+          <img src="../icon-lazada.png" alt="Lazada">
+        </a>
+        <a href="https://www.instagram.com/kntoys.shop/" target="_blank" rel="noopener noreferrer" aria-label="Instagram KN TOYS" title="Instagram">
+          <img src="../icon-instagram.webp" alt="Instagram">
+        </a>
+        <a href="https://zalo.me/0562136879" target="_blank" rel="noopener noreferrer" aria-label="Zalo KN TOYS" title="Zalo">
+          <img src="../icon-zalo.webp" alt="Zalo">
         </a>
       </div>
     </section>

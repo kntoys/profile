@@ -1,1 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khuyến mãi - KN TOYS</title>
+  <meta name="description" content="Trang khuyến mãi KN TOYS.">
+  <meta name="theme-color" content="#ef3340">
+  <link rel="icon" href="../logo.png" type="image/png">
 
+  <style>
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .topbar {
+      height: 58px;
+      flex: 0 0 58px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 16px;
+      background: #ef3340;
+      box-shadow: 0 2px 10px rgba(0,0,0,.12);
+      position: relative;
+      z-index: 10;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      color: #fff;
+      font-weight: 800;
+      font-size: 16px;
+      white-space: nowrap;
+    }
+
+    .brand img {
+      width: 34px;
+      height: 34px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .home-button {
+      margin-left: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 9px 13px;
+      border-radius: 10px;
+      background: #fff;
+      color: #ef3340;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 14px;
+      line-height: 1;
+      box-shadow: 0 2px 8px rgba(0,0,0,.10);
+    }
+
+    .home-button:hover {
+      transform: translateY(-1px);
+    }
+
+    .frame-wrap {
+      flex: 1 1 auto;
+      min-height: 0;
+      width: 100%;
+      background: #fff;
+    }
+
+    iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: #fff;
+    }
+
+    @media (max-width: 520px) {
+      .topbar {
+        height: 54px;
+        flex-basis: 54px;
+        padding: 0 10px;
+      }
+
+      .brand {
+        font-size: 14px;
+        gap: 8px;
+      }
+
+      .brand img {
+        width: 30px;
+        height: 30px;
+      }
+
+      .home-button {
+        padding: 8px 10px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="../logo-white.png" alt="KN TOYS">
+      <span>KN TOYS · Khuyến mãi</span>
+    </div>
+
+    <a class="home-button" href="https://kntoys.vn/">
+      ← Về trang chủ
+    </a>
+  </header>
+
+  <main class="frame-wrap">
+    <iframe
+      src="https://sites.google.com/view/kntoys/trang-ch%E1%BB%A7"
+      title="Khuyến mãi KN TOYS"
+      loading="eager"
+      allowfullscreen>
+    </iframe>
+  </main>
+</body>
+</html>
